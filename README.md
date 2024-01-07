@@ -7,3 +7,4 @@
 - Vite
 - TypeScript
 - Styled Components
+- JSON Server `npx json-server nomeDoArquivo` 
