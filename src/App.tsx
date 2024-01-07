@@ -1,8 +1,8 @@
-import { ThemeProvider } from "styled-components";
-import { GlobalStyle } from "./styles/global";
-import { defaultTheme } from "./styles/theme/default";
-import { BrowserRouter } from "react-router-dom";
-import { Router } from "./Routes";
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyle } from './styles/global'
+import { defaultTheme } from './styles/theme/default'
+import { BrowserRouter } from 'react-router-dom'
+import { Router } from './Routes'
 
 export function App() {
   return (
@@ -11,7 +11,6 @@ export function App() {
       <BrowserRouter>
         <Router />
       </BrowserRouter>
-   </ThemeProvider>
+    </ThemeProvider>
   )
 }
-
