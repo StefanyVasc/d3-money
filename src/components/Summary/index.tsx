@@ -6,7 +6,7 @@ import {
 import { SummaryCard, SummaryContainer } from './styles'
 import { useTheme } from 'styled-components'
 import { useTransaction } from '../../hooks/useTransaction'
-import { priceFormatter } from '../../utils/formmater'
+import { priceFormatter } from '../../utils/formatter'
 
 export function Summary() {
   const { colors } = useTheme()

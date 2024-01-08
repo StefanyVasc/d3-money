@@ -7,7 +7,7 @@ import {
   TransactionsTable,
 } from './styles'
 import { useTransaction } from '../../hooks/useTransaction'
-import { dateFormatter, priceFormatter } from '../../utils/formmater'
+import { dateFormatter, priceFormatter } from '../../utils/formatter'
 
 export function TransactionsPage() {
   const { transactions } = useTransaction()
