@@ -10,6 +10,11 @@ import {
 import * as zod from 'zod'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useTransaction } from '../../hooks/useTransaction'
+
+interface NewTransactionModalProps {
+  handleTransactionModalOpenChange: (status: boolean) => void
+}
 
 const NewTransactionModalSchema = zod.object({
   description: zod.string(),
@@ -20,11 +25,15 @@ const NewTransactionModalSchema = zod.object({
 
 type NewTransactionModalInputs = zod.infer<typeof NewTransactionModalSchema>
 
-export function NewTransactionModal() {
+export function NewTransactionModal({
+  handleTransactionModalOpenChange,
+}: NewTransactionModalProps) {
+  const { createTransactions } = useTransaction()
   const {
     control,
     register,
     handleSubmit,
+    reset,
     formState: { isSubmitting },
   } = useForm<NewTransactionModalInputs>({
     resolver: zodResolver(NewTransactionModalSchema),
@@ -33,8 +42,18 @@ export function NewTransactionModal() {
     },
   })
 
-  function handleCreateNewTransaction(data: NewTransactionModalInputs) {
-    console.log(data)
+  async function handleCreateNewTransaction(data: NewTransactionModalInputs) {
+    const { description, price, category, type } = data
+
+    await createTransactions({
+      description,
+      price,
+      category,
+      type,
+      createdAt: new Date(),
+    })
+    reset()
+    handleTransactionModalOpenChange(false)
   }
 
   return (
@@ -68,6 +87,9 @@ export function NewTransactionModal() {
             {...register('category')}
           />
 
+          {/* Controller é usado para adicionar comportamentos de formulário a
+          inputs personalizados, que não são nativos do HTML, onde há diferentes
+          formas de recuperar e alterar o seu valor */}
           <Controller
             control={control}
             name="type"
@@ -89,7 +111,6 @@ export function NewTransactionModal() {
               )
             }}
           />
-
           <button type="submit" disabled={isSubmitting}>
             Cadastrar
           </button>

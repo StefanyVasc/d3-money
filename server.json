@@ -31,6 +31,46 @@
       "category": "Emergência",
       "price": 1000,
       "createdAt": "2022-07-29T10:00:44.505Z"
+    },
+    {
+      "description": "Freela de categoria duvidosa",
+      "price": 500,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2024-01-09T00:05:48.049Z",
+      "id": 5
+    },
+    {
+      "description": "Bomba pra meter o shape",
+      "price": 1500,
+      "category": "Saúde",
+      "type": "outcome",
+      "createdAt": "2024-01-09T00:26:43.326Z",
+      "id": 6
+    },
+    {
+      "description": "Skins de jogo de GLS",
+      "price": 1000,
+      "category": "Potota's",
+      "type": "outcome",
+      "createdAt": "2024-01-09T00:32:42.092Z",
+      "id": 7
+    },
+    {
+      "description": "Tirei no bicho",
+      "price": 5000,
+      "category": "Fé",
+      "type": "income",
+      "createdAt": "2024-01-09T00:42:53.465Z",
+      "id": 8
+    },
+    {
+      "description": "Chiclete mastigado",
+      "price": 1,
+      "category": "Inutilidades",
+      "type": "outcome",
+      "createdAt": "2024-01-09T00:47:00.589Z",
+      "id": 9
     }
   ]
 }
