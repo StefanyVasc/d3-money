@@ -10,7 +10,8 @@ import {
 import * as zod from 'zod'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useTransaction } from '../../hooks/useTransaction'
+import { useContextSelector } from 'use-context-selector'
+import { TransactionsContext } from '../../contexts/TransactionContext'
 
 interface NewTransactionModalProps {
   handleTransactionModalOpenChange: (status: boolean) => void
@@ -28,7 +29,13 @@ type NewTransactionModalInputs = zod.infer<typeof NewTransactionModalSchema>
 export function NewTransactionModal({
   handleTransactionModalOpenChange,
 }: NewTransactionModalProps) {
-  const { createTransactions } = useTransaction()
+  const createTransactions = useContextSelector(
+    TransactionsContext,
+    (context) => {
+      return context.createTransactions
+    },
+  )
+
   const {
     control,
     register,
