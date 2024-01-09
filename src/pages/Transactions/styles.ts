@@ -5,6 +5,8 @@ export const TransactionsContainer = styled.main`
   max-width: 1120px;
   margin: 4rem auto 0;
   padding: 0 1.5rem;
+  overflow-y: hidden;
+  max-height: 680px;
 `
 
 export const TransactionsTable = styled.table`
@@ -12,6 +14,25 @@ export const TransactionsTable = styled.table`
   border-collapse: separate;
   border-spacing: 0 0.5rem;
   margin-top: 1.5rem;
+
+  tbody {
+    height: 680px;
+    overflow-y: auto;
+    display: block;
+
+    scrollbar-width: thin;
+    scrollbar-color: #888 ${({ theme }) => theme.colors['gray-900']};
+
+    &::-webkit-scrollbar {
+      width: 10px;
+      background-color: ${({ theme }) => theme.colors['gray-900']};
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.colors['gray-700']};
+      border-radius: 5px;
+    }
+  }
 
   td {
     padding: 1.25rem 2rem;

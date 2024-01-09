@@ -20,7 +20,7 @@ export function TransactionsPage() {
       <Header />
       <Summary />
 
-      <TransactionsContainer className="container AAAA">
+      <TransactionsContainer>
         <SearchForm />
         <TransactionsTable>
           <tbody>
