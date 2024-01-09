@@ -71,6 +71,14 @@
       "type": "outcome",
       "createdAt": "2024-01-09T00:47:00.589Z",
       "id": 9
+    },
+    {
+      "description": "Achei dinheiro no bolso da calça",
+      "price": 200,
+      "category": "Deus ajudando",
+      "type": "income",
+      "createdAt": "2024-01-09T03:04:46.299Z",
+      "id": 10
     }
   ]
 }
