@@ -3,6 +3,9 @@ import { TransactionsContext } from '../contexts/TransactionContext'
 import { useContextSelector } from 'use-context-selector'
 
 export function useSummary() {
+  /* useContextSelector evita renderizaçoes desnecessarias
+  quando um valor não selecionado da Context API tenha sido
+  alterado */
   const transactions = useContextSelector(TransactionsContext, (context) => {
     return context.transactions
   })

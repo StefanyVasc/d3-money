@@ -64,6 +64,8 @@ export function NewTransactionModal({
   }
 
   return (
+    /* Portal é uma forma de renderizar um elemento filho dentro de um nó
+    DOM que existe fora da hierarquia do componente pai. */
     <Dialog.Portal>
       <Overlay />
 
