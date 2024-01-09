@@ -1,5 +1,5 @@
 ## About
-DT Money is a financial management, offering users efficiency in managing their income, expenses and balance.
+DT Money é uma aplicação de gestão financeira, oferecendo aos usuários eficiência para gerir suas receitas, despesas e saldo.
 
 - Principais funcionalidades
   - Cadastrar transações.
