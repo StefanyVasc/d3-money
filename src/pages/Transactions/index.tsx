@@ -9,6 +9,7 @@ import {
 import { dateFormatter, priceFormatter } from '../../utils/formatter'
 import { TransactionsContext } from '../../contexts/TransactionContext'
 import { useContextSelector } from 'use-context-selector'
+import { EmptyTable } from '../../components/EmptyTable'
 
 export function TransactionsPage() {
   const transactions = useContextSelector(TransactionsContext, (context) => {
@@ -24,6 +25,8 @@ export function TransactionsPage() {
         <SearchForm />
         <TransactionsTable>
           <tbody>
+            {transactions.length === 0 && <EmptyTable />}
+
             {transactions.map((transaction) => {
               return (
                 <tr key={transaction.id}>
